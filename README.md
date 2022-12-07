@@ -11,10 +11,10 @@ the master logic is straighforward and follows [IPaymaster](https://github.com/m
 
 - satisfy
     ![satisfy](./public/12_ContractShow.png)
-satisy is meant make sure tht a paymaster is satisfied with a user before agreeing to offset the gas fees. according to the cust validation checks set during ployment. the paymaster makes sure that a user meets all criterion before be allowed to use ethereum for free.
+satisfy is meant make sure that a paymaster is satisfied with a user before agreeing to offset the gas fees. According to the cust validation checks set during ployment. The paymaster makes sure that a user meets all criterion before be allowed to use ethereum for free.
 - store
     ![store 1](./public/10_ContractShow.png)
-a storage contract that is meant to hold the address and offchain metadata of all paymasters. basically creating an easy way to access any paymaster
+A storage contract that is meant to hold the address and offchain metadata of all paymasters. Basically creating an easy way to access any paymaster
  the getter functions also define a way to access any paymaster from a front end.
     ![store 1](./public/11_ContractShow.png)
 
@@ -30,7 +30,7 @@ This allows paymasters to restrict the use of their paymasters to wallets with a
 This allows paymasters to charge gas fees in ERC20 or use ERC20 or ERC721 tokens to gate interaction with the paymasters.
 - Amount:
 This is the amount of X token a user is required to hold before allowed to access a paymaster
-- TokenAdress: this can either be ERC20 or ERC721. It allows organizations to provide free gas to users holding a specific ERC721 token or a specific amount of ERC20 token, better still charge users in such token.
+- TokenAddress: this can either be ERC20 or ERC721. It allows organizations to provide free gas to users holding a specific ERC721 token or a specific amount of ERC20 token, better still charge users in such token.
 - Validation Address (VA): May be linked to governance addresses or protocol addresses. The validation address VA takes a lot of high level privileges including receiving ERC20 fees.
 At deployment, some of the configurations are stored on IPFS and used in the SyncWallet UI only.
 
@@ -45,7 +45,7 @@ nb: Ethereum jsonRPC injected by coinbase wallet is not used as a provider for n
 A user can easily create an AA account and start using a paymaster from the list of available paymasters.
 
 1. EOA is not supported but however, a private key is used as an EIP712 signer
-2. After account is deployed, account is saved to an  encrypted browser storage whhich use a combination of sha256 and AES to encrypt private key. (though may be strongly discourage (but for demo))
+2. After account is deployed, account is saved to an  encrypted browser storage which use a combination of sha256 and AES to encrypt private key. (though may be strongly discouraged (but for demo))
     ![wallet ui](./public/03_PaymastersWallet.png?raw=true "SyncWallet UI")
 3. A user can perform simple operations like token transfers and can also deploy a paymaster.
     ![wallet ui](./public/00_PaymasterWallet.png?raw=true "SyncWallet UI")
@@ -58,8 +58,8 @@ The EIP712signing private key is stored on an Encrypted browser storage. Current
 
 Benefits:
 
-- Having a paymaster interface can help expand the kind of Daos that exists.
-- There can be specialized Daos that are primarily focused on gas offsets
+- Having a paymaster interface can help expand the kind of DAOs that exists.
+- There can be specialized DAOs that are primarily focused on gas offsets
 - Custom paymaster arguments gives organisations control of their end target.
 As well as being able to provide smooth service to your community.
 - If you interact with Ethereum for free by holding a token, then it's safe to say that there will be less hard hitting bear markets as you can be incentivised to hold.
@@ -71,9 +71,9 @@ As well as being able to provide smooth service to your community.
 Improvements:
 Move to a secured key storage instead of browser storage.
 Allows larger paymaster use case such as
-One time use paymasters: runs only for a duration.
+one-time use paymasters: runs only for a duration.
 Cross chain transactions: interact in other chains and settle fees with the chain with which you have enough funds.
-Paymaster extension: allow other paymasters to extend gas offset to sister or brother paymaster while the current paymaster refills Eth.
+Paymaster extension: allow other paymasters to extend gas offset to sister or brother paymaster while the current paymaster refills ETH.
 
 Not implemented:
  Signing transactions with active paymaster.
